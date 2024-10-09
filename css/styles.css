@@ -6,9 +6,10 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5; /* Легкий фон */
     color: #333;
+    line-height: 1.6;
     padding: 20px;
 }
 
@@ -18,63 +19,75 @@ header {
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 3rem;
+    color: #ff6347; /* Яркий томатный цвет */
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    letter-spacing: 3px;
 }
 
 /* Контейнер для меню */
 .menu-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    flex-wrap: wrap; /* Добавляет перенос строк на маленьких экранах */
 }
 
 /* Стили для каждого элемента меню */
 .menu-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    background-color: #fff; /* Цвет фона элемента меню */
+    border: 1px solid #000; /* Черная граница */
+    border-radius: 10px;
     padding: 20px;
-    flex: 1; /* Элементы будут равной ширины */
-    min-width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Позволяет заголовку располагаться по правому верхнему углу */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Эффект нажатия */
 }
 
 .menu-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px); /* Эффект поднятия при наведении */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Заголовок внутри каждого блока меню */
 .item-title {
-    font-size: 1.8rem;
-    color: #555;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    text-align: center;
+    background-color: #ff6347; /* Цвет фона заголовка */
+    color: #fff; /* Цвет текста заголовка */
+    padding: 10px;
+    position: absolute; /* Позволяет зафиксировать заголовок в верхнем правом углу */
+    top: 10px;
+    right: 10px;
+    border-radius: 5px; /* Скругление углов */
+    font-weight: 600; /* Жирный текст */
 }
 
 /* Текст внутри каждого блока меню */
 .menu-item p {
+    margin-top: 50px; /* Отступ сверху для текста */
     font-size: 1rem;
-    line-height: 1.6;
+}
+
+/* Выделенный текст */
+.highlight {
+    color: #ff6347; /* Цвет выделенного текста */
+    font-weight: bold; /* Жирный текст */
+}
+
+/* Стили для подвала */
+footer {
+    text-align: center;
+    margin-top: 40px;
     color: #666;
-    text-align: justify;
+    font-size: 0.9rem;
 }
 
 /* Адаптивные стили для разных устройств */
 @media (max-width: 768px) {
-    .menu-container {
-        flex-direction: column;
+    h1 {
+        font-size: 2.5rem; /* Уменьшение размера заголовка на мобильных устройствах */
     }
-
+    
     .menu-item {
-        margin-bottom: 20px;
+        padding: 15px; /* Уменьшение отступов на мобильных устройствах */
     }
 }
+    
