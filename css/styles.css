@@ -1,69 +1,80 @@
+/* Общие стили */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
     padding: 20px;
-    line-height: 1.6;
 }
 
 header {
     text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
-.menu-section {
-    border: 1px solid black;
+/* Контейнер для меню */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Добавляет перенос строк на маленьких экранах */
+}
+
+/* Стили для каждого элемента меню */
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f4f4f4;
-    position: relative;
+    flex: 1; /* Элементы будут равной ширины */
+    min-width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.section-title {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ddd;
-    padding: 5px;
-    border: 1px solid black;
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-@media (min-width: 992px) {
-    .menu-section {
-        float: left;
-        width: 32%;
-        margin-right: 2%;
-    }
-
-    .menu-section:nth-child(3) {
-        margin-right: 0;
-    }
+/* Заголовок внутри каждого блока меню */
+.item-title {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .menu-section {
-        float: left;
-        width: 48%;
-        margin-right: 4%;
-        margin-bottom: 20px;
-    }
-
-    .menu-section:nth-child(2n) {
-        margin-right: 0;
-    }
-
-    .menu-section:nth-child(3) {
-        width: 100%;
-    }
+/* Текст внутри каждого блока меню */
+.menu-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    text-align: justify;
 }
 
-@media (max-width: 767px) {
-    .menu-section {
-        width: 100%;
+/* Адаптивные стили для разных устройств */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+    }
+
+    .menu-item {
         margin-bottom: 20px;
     }
 }
